@@ -181,7 +181,7 @@ class PlayerLaser(pygame.sprite.Sprite):
     def __init__(self, pos):
         pygame.sprite.Sprite.__init__(self)
         self.image = load_image(os.path.join(
-            'data', 'images', 'resources', 'laser1.png'), False)
+        'data', 'images', 'resources', 'laser1.png'), False)
         self.rect = self.image.get_rect()
         self.rect.center = pos
 
@@ -191,6 +191,19 @@ class PlayerLaser(pygame.sprite.Sprite):
         else:
             self.rect.move_ip((0, -10))
 
+class PlayerLaser1(pygame.sprite.Sprite):
+    def __init__(self, pos):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = load_image(os.path.join(
+        'data', 'images', 'resources', 'speciallaser.png'), False)
+        self.rect = self.image.get_rect()
+        self.rect.center = pos
+
+    def update(self):
+        if self.rect.bottom <= 0:
+            self.kill()
+        else:
+            self.rect.move_ip((0, -20))
 
 class LaserEnemy(pygame.sprite.Sprite):
     def __init__(self, pos):
@@ -220,6 +233,31 @@ class TextBox(pygame.sprite.Sprite):
     def update(self):
         self.image = self.font.render(self.text, True, TEXTCOLOR)
 
+class RedTextBox(pygame.sprite.Sprite):
+    def __init__(self, text, font, pos_x, pos_y):
+        pygame.sprite.Sprite.__init__(self)
+        self.font = font
+        self.text = text
+        self.image = self.font.render(self.text, True, RED_TEXTCOLOR)
+        self.rect = self.image.get_rect()
+        self.rect.x = pos_x
+        self.rect.y = pos_y
+
+    def update(self):
+        self.image = self.font.render(self.text, True, RED_TEXTCOLOR)        
+
+class GreenTextBox(pygame.sprite.Sprite):
+    def __init__(self, text, font, pos_x, pos_y):
+        pygame.sprite.Sprite.__init__(self)
+        self.font = font
+        self.text = text
+        self.image = self.font.render(self.text, True, GREEN_TEXTCOLOR)
+        self.rect = self.image.get_rect()
+        self.rect.x = pos_x
+        self.rect.y = pos_y
+
+    def update(self):
+        self.image = self.font.render(self.text, True, GREEN_TEXTCOLOR)   
 
 class Explosion(pygame.sprite.Sprite):
     def __init__(self, object_rect, type_explosion="explosion"):

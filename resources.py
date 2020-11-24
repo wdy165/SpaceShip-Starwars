@@ -28,6 +28,8 @@ WINDOW_WIDTH = 800
 WINDOW_HEIGHT = 650
 DISPLAYMODE = (WINDOW_WIDTH, WINDOW_HEIGHT)
 TEXTCOLOR = (255, 255, 255)
+RED_TEXTCOLOR = (255,0,0)
+GREEN_TEXTCOLOR = (0,255,0)
 FPS = 40
 # To limit the total amount of droids that can be generated without filling the screen.
 MAX_NUMBER_DROIDS = 15
