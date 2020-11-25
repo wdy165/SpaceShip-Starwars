@@ -225,6 +225,9 @@ class Game(object):
                     gage += 5
                     if gage >= 100:
                         gage = 100
+                    if self.big_laser > 0:
+                        group_laser_player.add(
+                            PlayerLaser1(droid.rect.midtop))
                     group_explosion.add(Explosion(droid.rect, "explosion"))
                     explosion_droid.play()
                     count_destroyed_droids += 1
@@ -234,6 +237,9 @@ class Game(object):
                     gage += 3
                     if gage >= 100:
                         gage = 100
+                    if self.big_laser > 0:
+                        group_laser_player.add(
+                            PlayerLaser1(asteroid.rect.midtop))    
                     group_explosion.add(Explosion(asteroid.rect, "smoke"))
                     explosion_asteroid.play()
                     # We ask if it's an asteroid that provides energy to change the image.

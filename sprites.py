@@ -159,8 +159,8 @@ class Asteroid(pygame.sprite.Sprite):
     def update(self):
         self.rect.move_ip((self.x_speed, self.y_speed))
 
-        if self.rect.left <= 0 or self.rect.right >= WINDOW_WIDTH or self.rect.bottom >= WINDOW_HEIGHT:
-            self.kill()
+        #if self.rect.left <= 0 or self.rect.right >= WINDOW_WIDTH or self.rect.bottom >= WINDOW_HEIGHT:
+         #   self.kill()
 
     def select_image(self, archivo, is_energy_img=False):
         path_img = os.path.join('data', 'images', archivo)
@@ -186,10 +186,10 @@ class PlayerLaser(pygame.sprite.Sprite):
         self.rect.center = pos
 
     def update(self):
-        if self.rect.bottom <= 0:
-            self.kill()
-        else:
-            self.rect.move_ip((0, -10))
+        #if self.rect.bottom <= 0:
+         #   self.kill()
+        #else:
+        self.rect.move_ip((0, -10))
 
 class PlayerLaser1(pygame.sprite.Sprite):
     def __init__(self, pos):
@@ -203,7 +203,7 @@ class PlayerLaser1(pygame.sprite.Sprite):
         if self.rect.bottom <= 0:
             self.kill()
         else:
-            self.rect.move_ip((0, -20))
+            self.rect.move_ip((0, -10))
 
 class LaserEnemy(pygame.sprite.Sprite):
     def __init__(self, pos):
